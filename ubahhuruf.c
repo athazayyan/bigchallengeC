@@ -2,9 +2,8 @@
 #include <string.h>
 #include "header.h"
 
-int jumlahnilaiKarakter(){
+double scoring(char *inputan) {
     double nilai = 0;
-    char inputan[500];
     
     scanf("%[^\n]", inputan);
     
