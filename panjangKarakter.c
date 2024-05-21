@@ -17,4 +17,5 @@ int hitunghasilKarakter() {
     fclose(fileHitungKarakter);
     printf("Jumlah karakter dalam file adalah %d\n", hasilKarakter);
     return hasilKarakter;
+
 }
