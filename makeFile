@@ -1,0 +1,2 @@
+Run:
+	gcc header.h main.c hilanginKarakter.c hitungKarakter.c input.txt scoring.c ubahJadiKecil.c strtok.c -o run
