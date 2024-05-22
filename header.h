@@ -3,20 +3,22 @@
 #include <string.h>
 #include <ctype.h>
 
-struct kataperbaris {
+typedef struct {
     double skor;
     int jumlahkatadenganskorsama;
     char *kata;
     int panjangkata;
     int baris;
-};
+}kataperbaris;
 
-struct kata {
-    double skor;
-    char *kata;
-    int jumlahkata;
-};
 
 int hitunghasilKarakter(const char* filename);
 void ubahkatajadikecil(int jumlahKata, const char *inputFilename, FILE *tmp);
-void menghilangkantandabaca(FILE *tmp, const char *outputFilename);
+void menghilangkantandabaca(FILE *tmp);
+void besarkanhurufdiawal(int jumlahkarakter);
+int hitungKata(int jumlahKarakter);
+double scoring(const char *inputan);
+void strtokbismillah( char* satubaris, int jumlahkarakter, kataperbaris *kata);
+char *bacasatubaris(int jumlahkarakter);
+int hitungKata(int jumlahKarakter);
+void insertionSort(kataperbaris kata[], int word);

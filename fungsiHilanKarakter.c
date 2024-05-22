@@ -1,8 +1,8 @@
 #include "header.h"
 
-void menghilangkantandabaca(FILE *tmp, const char *outputFilename) {
+void menghilangkantandabaca(FILE *tmp) {
     rewind(tmp); 
-    FILE *outputFile = fopen(outputFilename, "w");
+    FILE *outputFile = fopen("outtemp.txt", "w");
     if (outputFile == NULL) {
         printf("Output file tidak dapat dibuka\n");
         return;
@@ -21,5 +21,4 @@ void menghilangkantandabaca(FILE *tmp, const char *outputFilename) {
     }
 
     fclose(outputFile);
-   
 }

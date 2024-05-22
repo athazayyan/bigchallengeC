@@ -22,17 +22,12 @@ void ubahkatajadikecil(int jumlahKata, const char *inputFilename, FILE *tmp) {
         for (int i = 0; buffer[i]; i++) {
             buffer[i] = tolower((unsigned char)buffer[i]);
         }
-
-       
         if (!firstWord) {
             strcat(concatenatedString, " "); 
         }
         strcat(concatenatedString, buffer); 
-
         firstWord = 0; 
     }
-
     fprintf(tmp, "%s", concatenatedString);
-
     fclose(inputFile);
 }
