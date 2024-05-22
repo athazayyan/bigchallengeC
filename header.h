@@ -3,6 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
+
+
 struct kataperbaris {
     double skor;
     int jumlahkatadenganskorsama;
