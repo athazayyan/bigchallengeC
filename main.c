@@ -1,31 +1,25 @@
 #include "header.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 
 int main() {
-    char inputFilename[Maks];
-    char outputFilename[Maks];
-
-    system("cls");
+    FILE *tmp = tmpfile();
+    if (!tmp) {
+        perror("Unable to create temporary file");
+        return 1;
+    }
+    char inputFilename[256];
 
     printf("Masukkan nama inputan file: ");
     scanf("%s", inputFilename);
 
-    printf("Masukkan nama outputan file: ");
-    scanf("%s", outputFilename);
-
-    int jumlahKata = hitunghasilKarakter(inputFilename);
-    ubahkatajadikecil(jumlahKata, inputFilename);
-
-   
-    FILE *outputFile = fopen(outputFilename, "w");
-    if (outputFile == NULL) {
-        printf("File tidak dapat dibuat\n");
-        return 1;
+    int jumlahKarakter = hitunghasilKarakter(inputFilename);
+    if (jumlahKarakter > 0) {
+        ubahkatajadikecil(jumlahKarakter, inputFilename, tmp);
+        menghilangkantandabaca(tmp, "output.txt");
+    } else {
+        printf("Gagal menghitung karakter dalam file.\n");
     }
+
+    fclose(tmp);
     return 0;
 }
-
 
