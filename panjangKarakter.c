@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "header.h"
 
-int hitunghasilKarakter() {
-    char tempkata;
-    FILE *fileHitungKarakter = fopen("input.txt", "r");
-    if (fileHitungKarakter == NULL) {
+int hitunghasilKarakter(const char* filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
         printf("File tidak dapat dibuka\n");
-        exit(1);
+        return -1;
     }
-    
-    int hasilKarakter = 0;
-    while ((tempkata = fgetc(fileHitungKarakter)) != EOF) {
-        hasilKarakter++;
-    }
-    
-    fclose(fileHitungKarakter);
-    printf("Jumlah karakter dalam file adalah %d\n", hasilKarakter);
-    return hasilKarakter;
 
+    int karakterCount = 0;
+    char ch;
+    while ((ch = fgetc(file)) != EOF) {
+        karakterCount++;
+    }
+
+    fclose(file);
+    return karakterCount;
 }
