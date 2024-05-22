@@ -1,30 +1,22 @@
-#ifndef HEADER_H
-#define HEADER_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-typedef struct dataMentah
-{
+struct kataperbaris {
     double skor;
-    char kata[50];
-    int panjangKata;
+    int jumlahkatadenganskorsama;
+    char *kata;
+    int panjangkata;
+    int baris;
+};
 
-} data;
-
-typedef struct dataHasil{
+struct kata {
     double skor;
-    char kata[50];
-    int panjangKata;
-} result;
+    char *kata;
+    int jumlahkata;
+};
 
-int countCharacter(int);
-int countLine(int);
-int countLenght(int);
-void characterToVariable(int, int, char *);
-void strtokCharacter(char *, char *,data datas[]);
-int countWord(int ,int ,char *);
-void bubbleSort(data datas[],int );
-void selectionSort(data datas[],int );
-void writeToBinary(data datas[],int );
-void readBinary(result hasil[],int );
-double scoring(char *);
-
-#endif
+int hitunghasilKarakter(const char* filename);
+void ubahkatajadikecil(int jumlahKata, const char *inputFilename, FILE *tmp);
+void menghilangkantandabaca(FILE *tmp, const char *outputFilename);
