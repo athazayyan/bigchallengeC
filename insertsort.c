@@ -20,7 +20,7 @@ void insertionSort(kataperbaris kata[], int word) {
         kata[j + 1] = key;
     }
 
-    // Sorting by kata (ascending) within each skor group
+    
     for (i = 1; i < word; i++) {
         key = kata[i];
         j = i - 1;
